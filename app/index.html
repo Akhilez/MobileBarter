@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mobile Barter DApp</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	
+	<style>
+	.section {
+			background-color: white;
+		  color: #696969;
+		  padding: 40px;
+			margin-top: 20px;
+	}
+	table{
+			margin-top:20px;
+			margin-bottom: 20px;
+	}
+	td{
+			width: 175px;
+	}
+	</style>
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  
+  <script src="./app.js"></script>
+</head>
+
+
+
+<body style="background-color:#696969">
+  <div class="container" style="margin-top:30px; margin-bottom: 30px">
+  <h1 align="center" style="color:white">Mobile Barter</h1>
+
+  <p align="center" style="color:white">Contract deployed at:
+         <div align="center" style="color:white" id="confAddress"></div>
+	</p>
+
+  <div class="section">
+      <h3 >Mobile Accounts</h3>
+			<button class="btn btn-default" id="refreshTable">Refresh Table</button>
+      <table id="accountsTable" class="table table-bordered" >
+        <tr><td>No data, please add accounts</td></tr>
+      </table>
+  </div>
+
+  <div class="section">
+      <h3>Add Mobile Account</h3>
+			<div id="addAccountResult"></div>
+
+			<table>
+      <tr><td>Mobile Number: </td><td><input type="text" id="addmobileNumber" pattern="[1-9]{1}[0-9]{9}"  maxlength="10" required/></td></tr>
+      <tr><td>Mobile Owner Address: </td><td><select id="addmobileOwner"></select></td></tr>
+     	<tr><td>Initial Talktime: </td><td><input type="text" id="addinitialTalktime" required/></td></tr>
+			</table>
+      <button class="btn btn-default" id="addAccountButton">Add Account</button>
+  </div>
+
+  <div class="section">
+      <h3>Call And Talk</h3>
+			<div id="callAndTalkResult"></div>
+      <table>
+      <tr><td>Caller's Mobile Number: </td><td><select id="callFromMobileNumber"></select> </td></tr>
+      <tr><td>Call Duration(in Min) </td><td><input type="text" id="callDuration" /> </td></tr>
+			</table>
+      <button class="btn btn-default" id="callAndTalkButton">Call & Talk</button><br />
+  </div>
+
+  <div class="section">
+      <h3>Request Talktime</h3>
+			<div id="requestTalktimeResult"></div>
+      <table>
+      <tr><td>Requesting Mobile Number: </td><td><select id="requestingMobileNumber"></select> </td></tr>
+			</table>
+      <button class="btn btn-default" id="requestingMobileButton">Request Talktime</button><br/>
+  </div>
+
+  <div class="section">
+      <h3>Transfer Talktime</h3>
+			<p id="xIsRequesting"></p>
+			<div id="transferTalktimeResult"></div>
+			<p id="numberBalanceResult"></p>
+      <table>
+      <tr><td>From  Mobile Number: </td><td><select id="chooseMobileNumber"></select></td></tr>
+      <tr><td>Talktime: </td><td><input type="text" id="Talktime" /> </td></tr>
+			</table>
+      <button class="btn btn-default" id="transferTalktimeButton">Transfer Talktime</button>
+  </div>
+
+  <div class="section">
+      <h3>MobileBarters History</h3>
+      <table id="historyTable" class="table table-bordered" >
+        <tr>
+         <th>From Mobile</th>
+         <th>To Mobile</th> 
+         <th>Talktime</th>
+        </tr>
+      </table>
+  </div>
+
+  </div>
+</body>
+</html> 
